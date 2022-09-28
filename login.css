@@ -1,0 +1,98 @@
+:root {
+    --red: #eb1d36;
+}
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav {
+    background-color: var(--red);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+}
+
+.logo {
+    height: 3rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.heading {
+    font-weight: 700;
+}
+
+footer {
+    padding: 5rem 0rem 1rem 0rem;
+    background-color: var(--red);
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+section {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+}
+
+.icon {
+    height: 1rem;
+}
+
+button {
+    border: none;
+    width: 100px;
+    height: 45px;
+    border-radius: 10px;
+}
+
+.submit {
+    margin: 2rem 0rem;
+}
+
+.card {
+    margin: 5rem auto;
+    background-color: var(--white);
+    width: fit-content;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 3rem;
+    width: 25vw;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 3rem auto;
+}
+
+input {
+    border: none;
+    background-color: rgb(246, 246, 246);
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 3rem;
+    margin: 1rem auto ;
+}
