@@ -40,7 +40,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(./assets/Rectangle\ 4.png);
+    background-image: url(./assets/img.jpg);
     background-size: cover;
 }
 
@@ -109,6 +109,10 @@ footer {
 @media (max-width: 540px) {
     * {
         font-size: 12px;
+    }
+
+    .carousel {
+        background-image: url(./assets/Rectangle\ 4.png);
     }
 
     .options {
