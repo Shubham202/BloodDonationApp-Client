@@ -126,5 +126,6 @@ footer {
     .camp {
         background-image: url(./assets/Rectangle\ 5.png);
         background-size: cover;
+        padding: 1rem;
     }
 }
