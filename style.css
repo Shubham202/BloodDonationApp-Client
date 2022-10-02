@@ -62,13 +62,18 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem 2.5rem;
     align-items: center;
+    padding: 2rem;
+    width: 225px;
+    height: 275px;
     background-color: var(--red);
     margin: 5rem 0rem;
-    height: 15rem;
     color: white;
     border-radius: 20px;
+}
+
+.option {
+    text-align: center;
 }
 
 .arrow {
@@ -125,6 +130,7 @@ footer {
         width: 10rem;
         height: 10rem;
         margin: auto;
+        padding: 1rem;
     }
 
     .camp {
