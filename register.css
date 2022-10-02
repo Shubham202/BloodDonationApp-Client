@@ -55,7 +55,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem;
+    /* padding: 4rem; */
 }
 
 .icon {
@@ -117,4 +117,14 @@ input {
 
 .img {
     width: 8rem;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+select {
+    margin: 1rem;
+    border-radius: 3px;
+    padding: 3px;
 }

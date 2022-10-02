@@ -16,6 +16,10 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
 }
 
 .logo {
@@ -43,7 +47,9 @@ a {
 .quote {
     font-family: 'Pacifico', cursive;
     color: white;
+    max-width: 70%;
     font-size: 2rem;
+    text-align: center;
 }
 
 .options {
@@ -98,4 +104,27 @@ footer {
     display: flex;
     justify-content: center;
     font-size: 0.8rem;
+}
+
+@media (max-width: 540px) {
+    * {
+        font-size: 12px;
+    }
+
+    .options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 50vh;
+    }
+
+    .card {
+        width: 10rem;
+        height: 10rem;
+        margin: auto;
+    }
+
+    .camp {
+        background-image: url(./assets/Rectangle\ 5.png);
+        background-size: cover;
+    }
 }
