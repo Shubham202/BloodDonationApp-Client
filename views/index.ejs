@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Blood</title>
+
+    <!-- Dependencies -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    />
+
+    
+</head>
+<body>
+    <nav>
+        <div class="nav-items">
+            <img class="logo" src="./assets/Logo.png" alt="logo" />
+        </div>
+        <div class="nav-items">
+            <a href="/" class="heading">Blood Donation App</a>
+        </div>
+        <div class="nav-items not-logged">
+            <a href="./login">Login</a>
+            |
+            <a href="./register">Register</a>
+        </div>
+        <div class="nav-items logged">
+            <a href="/request_lists">Hello, <span class="username"></span> </a>
+            |
+            <a href="/login" class="logout">logout</a>
+        </div>
+    </nav>
+
+    <div class="carousel">
+        <div class="quote">“Just 1 donation can save up to 3 lives.”</div>
+    </div>
+
+    <div class="options">
+        <div class="card">
+            <div class="option">Get Blood</div>
+            <a class="not-logged" href="/donordonation">
+                <img src="./assets/Arrow.png" alt="go" class="arrow" />
+            </a>
+            <a class="logged" href="/GetBloodPage">
+                <img src="./assets/Arrow.png" alt="go" class="arrow" />
+            </a>
+        </div>
+        <div class="card">
+            <div class="option">Donate Blood</div>
+            <a class="not-logged" href="/donordonation">
+                <img src="./assets/Arrow.png" alt="go" class="arrow" />
+            </a>
+            <a class="logged" href="/request_lists">
+                <img src="./assets/Arrow.png" alt="go" class="arrow" />
+            </a>
+        </div>
+        <div class="card">
+            <div class="option">Organize Blood Donation Campaign</div>
+            <a class="not-logged" href="/donordonation">
+                <img src="./assets/Arrow.png" alt="go" class="arrow" />
+            </a>
+            <a class="logged" href="/camporg">
+                <img src="./assets/Arrow.png" alt="go" class="arrow" />
+            </a>
+        </div>
+        <div class="card">
+            <div class="option">Register As Blood Bank</div>
+            <a class="not-logged" href="/donordonation">
+                <img src="./assets/Arrow.png" alt="go" class="arrow" />
+            </a>
+            <a class="logged" href="/bank_register">
+                <img src="./assets/Arrow.png" alt="go" class="arrow" />
+            </a>
+        </div>
+    </div>
+
+    <div class="slides">
+        <% for(let i=0; i < camps.length; i++) { %> 
+            <div class="camp slide">
+                <div class="container-1">
+                    <div class="container">
+                        <div class="org-name"><%= camps[i].Organization_name %></div>
+                        <div class="slogan"><%= camps[i].Date_Start  %> - <%= camps[i].Date_Close %></div>
+                    </div>
+                </div>
+                <div class="container-2">
+                    <div class="container">
+                        <div class="time-date"><%= camps[i].Time_Start  %> - <%= camps[i].Time_Close %></div>
+                        <div class="location"><%= camps[i].Venue %> </div>
+                        <div class="location"><%= camps[i].Contact_number %> </div>
+                    </div>
+                </div>
+            </div>
+        <% } %> 
+    </div>
+
+    <footer>
+        <div class="link-container">
+            <div class="links"></div>
+            <div class="links"></div>
+            <div class="links"></div>
+        </div>
+        <div class="copyright">All rights are resevered under © 2022</div>
+    </footer>
+
+    <script>
+        // Login
+        let user = localStorage.getItem('user')
+        if ( user === null) {
+            document.querySelectorAll('.logged').forEach(e => {
+                e.style.display = 'none';
+            })
+        } else {
+            document.querySelectorAll('.not-logged').forEach(e => {
+                e.style.display = 'none';
+            })
+        }
+        document.querySelector('.username').innerHTML = user
+        let logout = document.querySelector('.logout')
+        logout.addEventListener('click', () => {
+            localStorage.removeItem('user')
+        })
+
+        // Camp
+        let slide = document.querySelectorAll('.camp');
+        let i=0;
+        setInterval(() => {
+            if (i>0) {
+                slide[i-1].style.display = 'none';
+            }
+            if (i>slide.length-1) {
+                i=0;
+            }
+            slide[i].style.display = 'flex';
+            i++;
+        }, 3000);
+    </script>
+
+</body>
+</html>

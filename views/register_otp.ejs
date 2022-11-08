@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Blood</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/register.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-items">
+            <img class="logo" src="./assets/Logo.png" alt="logo">
+        </div>
+        <div class="nav-items">
+            <a href="./" class="heading">Blood Donation App</a>
+        </div>
+        <div class="nav-items">
+            <a href="./login">Login</a>
+            |
+            <a href="./register">Register</a>
+        </div>
+    </nav>
+    <section>
+        <div class="container-1">
+            <form action="/register_otp" method="post">
+                <div class="head">Welcome!</span></div>
+                <input required type="email" name="emailID" class="email" disabled style="color: grey;" placeholder="Enter your email ID">
+                <input required type="text" name="otp" placeholder="Enter OTP">
+                <button class="bg-red white submit">verify</button>
+            </form>
+        </div>
+        <div class="container-2">
+            <img class="img" src="./assets/Blood.png" alt="Image">
+        </div>
+    </section>
+
+
+    <script>
+        let email = localStorage.getItem('email');
+        document.querySelector('.email').value = email;
+    </script>
+
+</body>
+</html>

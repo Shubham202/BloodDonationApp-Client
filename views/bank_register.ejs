@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>One Blood</title>
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="/css/bank_register.css" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav>
+            <div class="nav-items">
+                <img class="logo" src="./assets/Logo.png" alt="logo" />
+            </div>
+            <div class="nav-items">
+                <a href="/" class="heading">Blood Donation App</a>
+            </div>
+            <div class="nav-items not-logged">
+                <a href="./login">Login</a>
+                |
+                <a href="./register">Register</a>
+            </div>
+            <div class="nav-items logged">
+                <a href="/request_lists">Hello, <span class="username"></span> </a>
+                |
+                <a href="/login" class="logout">logout</a>
+            </div>
+        </nav>
+        <section>
+            <div class="container-1">
+                <form action="/bank_register" method="post">
+                    <div class="head">Register</div>
+                    <label for="">Organization Name</label>
+                    <input required name="orgName" type="text" />
+                    <label for="">Address</label>
+                    <input required name="address" type="text" />
+                    <label for="">Pin Code</label>
+                    <input required name="pinCode" type="number" />
+                    <label for="">Contact Number</label>
+                    <input required name="contactNumber" type="number" />
+                    <br />
+                    <br />
+                    <label for="">Timings</label>
+                    <br />
+                    <label for="">Open:</label>
+                    <input
+                        name="openTime"
+                        required
+                        type="time"
+                        style="width: min-content; margin: 10px"
+                    />
+                    <br />
+                    <label for="">close:</label>
+                    <input
+                        name="closeTime"
+                        required
+                        type="time"
+                        style="width: min-content; margin: 10px"
+                    />
+                    <br />
+                    <button class="submit" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="container-2">
+                <img class="img" src="./assets/Group 23.png" alt="Image" />
+            </div>
+        </section>
+        <% if (message != null) { %>
+            <div class="message-box">
+                <div class="message">
+                    <img class="cancel" src="./assets/x.png" alt="cancel">
+                    <div class="msg">
+                        <%= message %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+
+        <script>
+
+            let user = localStorage.getItem('user')
+            if ( user === null) {
+                document.querySelectorAll('.logged').forEach(e => {
+                    e.style.display = 'none';
+                })
+            } else {
+                document.querySelectorAll('.not-logged').forEach(e => {
+                    e.style.display = 'none';
+                })
+            }
+            document.querySelector('.username').innerHTML = user
+            let logout = document.querySelector('.logout')
+            logout.addEventListener('click', () => {
+                localStorage.removeItem('user')
+            })
+
+            document.querySelector('.cancel').addEventListener('click', () => {
+                document.querySelector('.message-box').style.display = 'none';
+            })
+        </script>
+    </body>
+</html>

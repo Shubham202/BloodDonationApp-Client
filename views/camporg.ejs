@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini project
+    </title>
+    <link rel="stylesheet" href="./css/style1.css">
+</head>
+<body>
+   
+    <nav>
+        <div class="nav-items">
+            <img class="logo" src="./assets/Logo.png" alt="logo" />
+        </div>
+        <div class="nav-items">
+            <a href="/" class="heading">Blood Donation App</a>
+        </div>
+        <div class="nav-items not-logged">
+            <a href="./login">Login</a>
+            |
+            <a href="./register">Register</a>
+        </div>
+        <div class="nav-items logged">
+            <a href="/request_lists">Hello, <span class="username"></span> </a>
+            |
+            <a href="/login" class="logout">logout</a>
+        </div>
+    </nav>
+
+    <section>
+        <h3>Camp details:</h3>
+        <form action="/camporg" method="post">
+            <div id="m1">
+                <div id="m2">
+                    <p><label for="dat">Date:</label></p>
+                    <ul id="date">
+                        <li class="left1"><input class="date-val" min="2000-00-00" type="text" name="date_start" id="" placeholder="From" onfocus="(this.type='date')"></li>
+                        <li class="middle1"><img src="./assets/arrow-39526.png" alt=""></li>
+                        <li class="right1"><input class="date-val" min="2000-00-00" type="text" name="date_close" placeholder="Till" onfocus="(this.type='date')"></li>
+                    </ul>
+                </div>
+                <div class="container">
+                    <div id="m3">
+                        <div class="head">Time:</div>
+                        <input style="width: 102px;" type="text" onfocus="(this.type='time')" name="time_start" placeholder="Start"></class=>
+                        to
+                        <input style="width: 102px;" type="text" onfocus="(this.type='time')" name="time_close" placeholder="End">
+                    </div>
+                    <div id="m4">
+                        <div class="head">Name of Organization:</div>
+                        <input style="width: 310px;" type="text" name="orgName" id="" placeholder="Eg.NSS-crce">
+                    </div>
+                </div>
+                <div>
+                    <p class="venue">Venue:
+                    </p>
+                        <input required class="inputtext" name="venue" type="text" class="size">
+                </div>
+                <div>
+                    <p class="venue">Contact Number:
+                    </p>
+                        <input required class="inputtext" name="contactNumber" type="number" class="size">
+                </div>
+            </div>
+            <div class="m5">
+                <button class="btn" type="submit">submit</button>
+            </div>
+        </form>
+    </section>
+
+    <% if (message != null) { %>
+        <div class="message-box">
+            <div class="message">
+                <img class="cancel" src="./assets/x.png" alt="cancel">
+                <div class="msg">
+                    <%= message %>
+                </div>
+            </div>
+        </div>
+    <% } %>
+
+    <script>
+
+        let user = localStorage.getItem('user')
+        if ( user === null) {
+            document.querySelectorAll('.logged').forEach(e => {
+                e.style.display = 'none';
+            })
+        } else {
+            document.querySelectorAll('.not-logged').forEach(e => {
+                e.style.display = 'none';
+            })
+        }
+        document.querySelector('.username').innerHTML = user
+        let logout = document.querySelector('.logout')
+        logout.addEventListener('click', () => {
+            localStorage.removeItem('user')
+        })
+
+        let today = new Date();
+        today = new Date(today);
+        today.setDate(today.getDate() + 1);
+        var month = ('0' + (today.getMonth() + 1)).slice(-2);
+        var day = ('0' + today.getDate()).slice(-2);
+        var year = today.getFullYear();
+        var date = year + '-' + month + '-' + day;
+        document.querySelectorAll('.date-val').forEach(e => {
+            e.min = date;
+        });
+
+        document.querySelector('.cancel').addEventListener('click', () => {
+            document.querySelector('.message-box').style.display = 'none';
+        });
+
+    </script>
+    
+</body>
+</html>

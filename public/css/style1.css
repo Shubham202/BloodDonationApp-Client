@@ -1,0 +1,298 @@
+
+:root {
+    --red: #eb1d36;
+}
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav {
+    background-color: var(--red);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+}
+
+.logo {
+    height: 3rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.heading {
+    font-weight: 700;
+}
+
+body{
+    background-image: url("../assets/bgImg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*  */
+
+#m1{
+    background-color: #F5EDDC;
+    /* height: 400px; */
+    width: 800px;
+    /* margin-left: 160px; */
+    margin: auto;
+    border-radius: 15px;
+    padding: 2rem 0;
+}
+
+h3{
+    color: white;
+    font-size: 24px;
+    margin: 5% 0;
+}
+
+section {
+    padding:  0 25vw;
+}
+
+#m2 ul{
+    display: flex;
+}
+#m2 li{
+   list-style: none;
+}
+#m2{
+    padding-left: 50px;
+    margin-bottom: 30px;
+}
+#m2 p{
+    font-size: 21px;
+}
+.middle1 img{
+    
+    /* background-color: rgb(247, 230, 208) ; */
+    height: 20px;
+    width: 120px;
+}
+.left1{
+    padding-left: 15px;
+}
+.left1 input{
+    width: 155px;
+}
+.right1 input{
+    width: 155px;
+}
+#m3 ul{
+    list-style: none;
+    display: flex;
+    padding-left: 50px;
+    font-size: 21px;
+}
+#m4 ul{
+    list-style: none;
+    display: flex;
+    padding-left: 50px;
+}
+input{
+    padding: 10px;
+    height: 50px;
+    background-color: #E3E3E3;
+    border: 0.5px solid black;
+    border-radius: 10px;
+}
+.right2{
+    margin-left: 390px;
+}
+.right3{
+    margin-left: 210px;
+}
+.m5{
+    text-align: center;
+    margin: 5% 0%;
+}
+.middle1{
+    margin-top: 18px;
+    margin-left: 109px;
+}
+.right1{
+    margin-left: 106px;
+}
+.mid{
+    margin-top: 14px;
+    font-size: 18px;
+    padding-right: 14px;
+    padding-left: 14px;
+}
+.lef{
+    padding-left: 10px;
+}
+.right3{
+
+}
+.venue{
+    padding-left: 48px;
+    font-size: 21px;
+    margin-top: 31px;
+}
+.inputtext{
+    margin-left: 65px;
+    width: 648px;
+}
+.btn{
+    padding: 10px;
+    background: transparent;
+    border-radius: 20px;
+    width: 120px;
+}
+.btn:hover{
+    background-color:#EB1D36 ;
+    border: none;
+    color: white;
+}
+
+
+#foot{
+    background-color: #EB1D36;
+    height: 40px;
+}
+#media{
+    display: none;
+}
+.message-box {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    padding: 3% 5%;
+    background-color: white;
+    border-radius: 10px;
+    color: var(--red);
+    font-weight: bold;
+    position: relative;
+}
+
+.cancel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 65px;
+}
+
+.head {
+    margin-left: -17px;
+    font-size: 21px;
+}
+
+@media screen and (max-width:400px) {
+    body{
+        /* background-color: black; */
+        /* min-width: 400px; */
+    }
+    .btn{
+        border: none;
+        background-color: #EB1D36;
+        color: white;
+    }
+    nav{
+        max-width: 100%;
+        justify-content:space-between;
+        padding: 0.25rem 0.12rem;
+    }
+    .logo{
+        padding-left: 10px;
+       
+    }
+    section{
+        height: 100vh;
+        padding: 25px;
+    }
+    #m1{
+        width: 300px;
+        margin: auto;
+    }
+    .inputtext{
+        width: 217px;
+    margin-left: 36px;
+    }
+    #m2{
+        padding-left: 8px;
+    }
+    .left1 input{
+        width: 96px;
+    }
+    .right1 input{
+        width: 96px;
+    }
+    .right1{
+        margin-left: 9px;
+    }
+    .middle1{
+        margin-left: 10px;
+        margin-top: 15px;
+
+    }
+    .right2{
+        /* display: none; */
+    }
+    .right3{
+        /* display: none; */
+    }
+    .middle1 img{
+        width: 44px;
+    }
+    #m4 ul{
+        padding-left: 14px;
+    }
+    .lef{
+
+    }
+    #m3 ul{
+        padding-left: 12px;
+    }
+    #media{
+        display: flex;
+    }
+    #media  ul
+    {
+        padding-left: 10px;
+        list-style: none;
+        margin-top: 25px;
+        font-size: 21px;
+    }
+    .tee{
+        padding-left: 16px;
+    }
+    .te{
+        width: 232px;
+    }
+    input{
+        width: 96px;
+    }
+    .mid{
+
+    }
+    .venue{
+        padding-left: 14px;
+    }
+    .inputtext{
+        width: 233px;
+        margin-left: 27px;
+    }
+}
