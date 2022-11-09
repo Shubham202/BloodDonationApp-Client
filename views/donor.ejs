@@ -34,12 +34,17 @@
                 <img class="logo" src="./assets/Logo.png" alt="logo" />
             </div>
             <div class="nav-items">
-                <a href="./" class="heading">Blood Donation App</a>
+                <a href="/" class="heading">Blood Donation App</a>
             </div>
-            <div class="nav-items">
+            <div class="nav-items not-logged">
                 <a href="./login">Login</a>
                 |
                 <a href="./register">Register</a>
+            </div>
+            <div class="nav-items logged">
+                <a href="/request_lists">Hello, <span class="username"></span> </a>
+                |
+                <a href="/login" class="logout">logout</a>
             </div>
         </nav>
 
@@ -96,5 +101,25 @@
         <div class="footer" style="height: 6.5rem">
             <p class="rights">All rights are resevered under © 2022</p>
         </div>
+
+        <script>
+            // Login
+            let user = localStorage.getItem('user')
+            if ( user === null) {
+                document.querySelectorAll('.logged').forEach(e => {
+                    e.style.display = 'none';
+                })
+            } else {
+                document.querySelectorAll('.not-logged').forEach(e => {
+                    e.style.display = 'none';
+                })
+            }
+            document.querySelector('.username').innerHTML = user
+            let logout = document.querySelector('.logout')
+            logout.addEventListener('click', () => {
+                localStorage.removeItem('user')
+            })
+        </script>
+
     </body>
 </html>
